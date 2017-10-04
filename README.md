@@ -55,7 +55,7 @@ npm test
 Trigger the lambda locally, providing optional JSON for event and context
 arguments:
 ```sh
-npm run trigger --event="$(cat myEventJson.json)" --context="$(cat myContextJson.json)"
+gulp trigger --event="$(cat myEventJson.json)" --context="$(cat myContextJson.json)"
 ```
 
 Package the lambda into a zip file that can be uploaded to S3 and specified
