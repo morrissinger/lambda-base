@@ -20,7 +20,8 @@ export const TASKS = {
 
 export const STREAMS = {
   event: {
-    end: 'end'
+    end: 'end',
+    exit: 'exit'
   }
 };
 

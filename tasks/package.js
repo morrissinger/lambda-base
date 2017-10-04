@@ -4,25 +4,27 @@ import gulp from 'gulp';
 import clean from 'gulp-clean';
 import zip from 'gulp-zip';
 import runSequence from 'run-sequence';
-import mergeStream from 'merge-stream';
+import eventStream from 'event-stream';
 
 
 import {TASKS, STREAMS, INSTALL_COMMAND} from './constants';
 import PATHS from './paths';
 
-gulp.task(TASKS.package.build, [TASKS.build.build], () => {
+gulp.task(TASKS.package.build, [TASKS.build.build], (cb) => {
   const stream1 = gulp.src(PATHS.packageJson)
     .pipe(gulp.dest(PATHS.package))
-    .on(STREAMS.event.end, () => {
-      exec(INSTALL_COMMAND, {
-        cwd: PATHS.package
-      });
-    });
 
   const stream2 = gulp.src(`${PATHS.lib}/${PATHS.recursive}`)
     .pipe(gulp.dest(PATHS.package));
 
-  return mergeStream(stream1, stream2);
+  eventStream.merge(stream1, stream2).on(STREAMS.event.end, () => {
+    exec(INSTALL_COMMAND, {
+      cwd: PATHS.package
+    }).on(STREAMS.event.exit, (code, signal) => {
+      cb();
+    });
+  });
+
 });
 
 gulp.task(TASKS.package.zip, [TASKS.package.build], () =>
