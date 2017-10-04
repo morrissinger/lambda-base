@@ -40,16 +40,26 @@ npm start
 ```
 
 ## Workflow
-General workflow is write code -> build -> test -> package:
+General workflow is write code -> build -> test -> trigger -> package.
 
+Build lambda into compatible JavaScript for Lambda runtime:
 ```sh
 npm run build
 ```
 
+Run tests:
 ```sh
 npm test
 ```
 
+Trigger the lambda locally, providing optional JSON for event and context
+arguments:
+```sh
+npm run trigger --event="$(cat myEventJson.json)" --context="$(cat myContextJson.json)"
+```
+
+Package the lambda into a zip file that can be uploaded to S3 and specified
+during Lambda creation using the AWS management console or CLI:
 ```sh
 npm run package
 ```

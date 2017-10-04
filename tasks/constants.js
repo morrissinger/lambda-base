@@ -15,6 +15,9 @@ export const TASKS = {
   test: {
     test: 'test',
     watch: 'watch'
+  },
+  trigger: {
+    trigger: 'trigger'
   }
 };
 
@@ -23,6 +26,10 @@ export const STREAMS = {
     end: 'end',
     exit: 'exit'
   }
+};
+
+export const JSON_SETTINGS = {
+  spaces: 4
 };
 
 export const INSTALL_COMMAND = 'npm install --production';
