@@ -5,7 +5,7 @@
   "main": "lib/index.js",
   "scripts": {
     "start": "node lib/index.js",
-    "test": "gulp test",
+    "test": "NODE_ENV=test gulp test",
     "lint": "./node_modules/.bin/eslint src",
     "build": "gulp build",
     "package": "NODE_ENV=production gulp package",

@@ -62,3 +62,6 @@ typings/
 
 # Transpiled output
 lib/
+
+# Package
+lambda.zip

@@ -1,7 +1,7 @@
 {
   "presets": ["env"],
   "env": {
-    "development": {
+    "test": {
       "plugins": ["rewire"],
       "presets": ["env"]
     }

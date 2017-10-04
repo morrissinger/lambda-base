@@ -38,6 +38,21 @@ To run the Lambda, use `npm`:
 npm start
 ```
 
+## Workflow
+General workflow is write code -> build -> test -> package:
+
+```sh
+npm run build
+```
+
+```sh
+npm test
+```
+
+```sh
+npm run package
+```
+
 ## Features
 
 The base project contains a number of useful features, as follows.
@@ -45,11 +60,11 @@ The base project contains a number of useful features, as follows.
 ### ECMAScript2017 via Babel
 Babel is included by default, with ES17 code going in the `./src` directory, with
 the transpiled target in `./lib`. You can control which language features you
-allow via the `.babelrc` file. You can transpile using the following two
-techniques:
+allow via the `.babelrc` file. You can transpile using NPM:
 
-1. Run via NPM: `npm build`, or
-2. Run via Gulp: `gulp build`.
+```sh
+npm run build
+```
 
 
 ### ESlint
@@ -62,6 +77,11 @@ npm run lint
 By default, the `.eslintrc.json` file is configured for the [AirBnB Style Guide](https://github.com/airbnb/javascript).
 
 ### Gulp
+You should generally build, test, and package using `npm` because the scripts
+defined there are responsible for setting the correct Node environment per
+phase. However, if you are interested in the task definitions, they are defined
+here.
+
 Gulp tasks are organized in the `./tasks` directory, and included in via the
 base `gulpfile.babel.js`. You can author tasks using ES2017 and Gulp is
 configured to be able to understand everything, including `import` statements.
