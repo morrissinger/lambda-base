@@ -12,8 +12,9 @@ a more full assortment of features available by-default. Transpiling from
 EC2017 was an early initial requirement, which led me to install Babel. At that
 point, I needed a build system, which led me to install Gulp. I needed to be
 able to do test-driven development of my work, which led to a number of
-additional development dependencies. Finally, I wanted to automate the task of
-packaging up the code for deployment into Lambda.
+additional development dependencies. I wanted clean code, requiring ESLint.
+Finally, I wanted to automate the task of packaging up the code for deployment
+into Lambda.
 
 This base embodies a number of opinions, but it shouldn't be too much trouble
 to make modifications to the setup if your opinions should be different.
