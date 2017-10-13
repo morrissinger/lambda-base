@@ -1,3 +1,5 @@
+![NodeJs Lambda](http://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/images/code-samples-lambda.png)
+
 # Lambda Base
 
 A base project for developing functions for [Amazon Web Services](http://aws.amazon.com) [Lambda](https://aws.amazon.com/lambda/). This is
