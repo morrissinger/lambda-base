@@ -65,3 +65,6 @@ lib/
 
 # Package
 lambda.zip
+
+#IntelliJ
+.idea
